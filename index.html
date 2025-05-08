@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cutecutecat ♡ 猫咪日常</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cat-ears"></div>
+    
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-paw"></i> cutecutecat <i class="fas fa-paw"></i></h1>
+            <p>记录猫咪和你的每一天 ♡</p>
+        </header>
+
+        <div class="music-player">
+            <audio id="bgMusic" src="music1.mp3" loop></audio>
+            <button id="musicBtn"><i class="fas fa-music"></i> 喵喵背景音乐</button>
+            <div class="volume-control">
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="0.7">
+            </div>
+        </div>
+
+        <div class="card mood-card">
+            <h2><i class="fas fa-face-grin-stars"></i> 今日喵心情</h2>
+            <div class="emoji-selector">
+                <span data-mood="开心" title="超开心！">😻</span>
+                <span data-mood="平静" title="慵懒~">😽</span>
+                <span data-mood="调皮" title="想捣蛋">😹</span>
+                <span data-mood="生气" title="炸毛了！">😾</span>
+                <span data-mood="困倦" title="Zzz...">🐱‍💤</span>
+            </div>
+            <textarea id="moodNote" placeholder="今天有什么想对喵星人说的吗？"></textarea>
+            <button id="saveMood" class="cat-btn"><i class="fas fa-paw"></i> 保存心情</button>
+            <div id="moodHistory" class="history-box"></div>
+        </div>
+
+        <div class="card weight-card">
+            <h2><i class="fas fa-weight-hanging"></i> 体重记录</h2>
+            <div class="input-group">
+                <input type="number" id="weightInput" placeholder="输入体重(kg)" step="0.1" min="0">
+                <span class="unit">kg</span>
+            </div>
+            <button id="saveWeight" class="cat-btn"><i class="fas fa-paw"></i> 记录体重</button>
+            <div class="chart-container">
+                <canvas id="weightChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card habit-card">
+            <h2><i class="fas fa-star"></i> 每日喵打卡</h2>
+            <div class="habit-list">
+                <label class="habit-item">
+                    <input type="checkbox" class="habit" data-habit="喝水">
+                    <span class="checkmark">🥛</span>
+                    <span class="habit-text">喝够水水</span>
+                </label>
+                <label class="habit-item">
+                    <input type="checkbox" class="habit" data-habit="运动">
+                    <span class="checkmark">🏃‍♀️</span>
+                    <span class="habit-text">运动20分钟</span>
+                </label>
+                <label class="habit-item">
+                    <input type="checkbox" class="habit" data-habit="梳毛">
+                    <span class="checkmark">🐾</span>
+                    <span class="habit-text">给喵梳毛毛</span>
+                </label>
+            </div>
+            <button id="saveHabits" class="cat-btn"><i class="fas fa-paw"></i> 完成打卡</button>
+            <div id="streakCounter" class="streak-box"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>made with <i class="fas fa-heart"></i> by cutecutecat</p>
+        <div class="cat-walking">
+            <span>🐾</span><span>🐾</span><span>🐾</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
